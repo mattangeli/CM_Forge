@@ -1,0 +1,6 @@
+&BANDS
+  prefix       = "MoSe2",
+  outdir       = "./out",
+  filband ="Bands.dat"
+/
+

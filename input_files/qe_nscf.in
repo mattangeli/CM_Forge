@@ -1,0 +1,58 @@
+ &CONTROL
+    calculation='nscf',
+    restart_mode='from_scratch',
+    disk_io='low',
+    prefix='MoSe2',
+    pseudo_dir='../../pseudopotentials',
+    forc_conv_thr=2.D-3,
+    outdir='./out',
+    verbosity='high',
+ /
+ 
+ &SYSTEM
+    ibrav=4,
+    A = 3.152,
+    C = 30.0,
+    nat = 6,
+    ntyp = 3,
+    noncolin=.TRUE.,
+    lspinorb=.TRUE.,
+    ecutwfc=50,
+    ecutrho=400,
+    occupations =smearing
+    smearing =mv
+    degauss =2.D-3
+    !input_dft='vdW-DF2-C09',
+ / 
+ 
+ &ELECTRONS
+    conv_thr=1.D-7,
+    mixing_mode='local-TF'
+    diagonalization='david',
+    diago_thr_init = 1.D-6,
+ /
+
+ &IONS
+     ion_dynamics='bfgs'
+ / 
+
+
+ ATOMIC_SPECIES 
+    Mo  95.95  Mo.rel-pbe-spn-rrkjus_psl.1.0.0.UPF
+    W  183.84  W.UPF
+    S  32.065  S.rel-pbe-n-rrkjus_psl.1.0.0.UPF
+ 
+
+ ATOMIC_POSITIONS {crystal} 
+Mo 0.0 0.0 0.110637825 
+S 0.333333333 0.666666666 0.058454225 
+S 0.333333333 0.666666666 0.162800832 
+W 0.0 0.0 -0.113971889 
+S 0.333333333 0.666666666 -0.061534448 
+S 0.333333333 0.666666666 -0.166386543 
+ 
+
+ K_POINTS {automatic}
+ 12 12 1 1 1 0
+ 
+
