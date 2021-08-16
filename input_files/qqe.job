@@ -1,14 +1,15 @@
-#!/bin/bash
+#!/bin/sh
 #SBATCH --qos=regular
 #SBATCH -N  1
 #SBATCH -n  16
 #SBATCH -C haswell
-#SBATCH -t 00:30:00
+#SBATCH -t 00:39:00
 #SBATCH -J my_job
 #SBATCH --mail-type=NONE
 
 export OMP_NUM_THREADS=1
 
 module load espresso/6.7
+
 
 srun pw.x -input relax.in > relax.out

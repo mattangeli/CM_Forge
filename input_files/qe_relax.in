@@ -4,29 +4,30 @@
     disk_io='low',
     prefix='MoSe2',
     pseudo_dir='../../pseudopotentials',
-    forc_conv_thr=3.D-3,
+    forc_conv_thr=1.D-3,
     outdir='./out',
     verbosity='high',
  /
  
  &SYSTEM
     ibrav=4,
-    A = 3.152,
+    A = 3.192,
     C = 30.0,
     nat = 6,
     ntyp = 3,
     noncolin=.FALSE.,
     lspinorb=.FALSE.,
-    ecutwfc=50,
-    ecutrho=400,
+    ecutwfc=60,
+    ecutrho=480,
     occupations =smearing
     smearing =mv
-    degauss =2.D-2
+    degauss =1.D-3
     input_dft='vdW-DF2-C09',
+    assume_isolated = '2D'
  / 
  
  &ELECTRONS
-    conv_thr=1.D-6,
+    conv_thr=1.D-7,
     mixing_mode='local-TF'
     diagonalization='david',
  /
@@ -37,9 +38,9 @@
 
 
  ATOMIC_SPECIES 
-    Mo  95.95  Mo.pbe-spn-kjpaw_psl.1.0.0.UPF
-    W  183.84  W.pbe-spn-kjpaw_psl.1.0.0.UPF
-    S  32.065  S.pbe-n-kjpaw_psl.1.0.0.UPF
+    Mo  95.95  Mo_ONCV_PBE-1.0.oncvpsp.upf
+    W  183.84  W_pbe_v1.2.uspp.F.UPF
+    S  32.065  s_pbe_v1.4.uspp.F.UPF
  
 
  ATOMIC_POSITIONS {crystal} 
@@ -52,6 +53,7 @@ S 0.333333333 0.666666666 -0.166386543
  
 
  K_POINTS {automatic}
- 12 12 1 0 0 0
+12 12 1 0 0 0 
+ 8 8 1 0 0 0
  
 

@@ -11,18 +11,19 @@
  
  &SYSTEM
     ibrav=4,
-    A = 3.152,
+    A = 3.192,
     C = 30.0,
     nat = 6,
     ntyp = 3,
     noncolin=.TRUE.,
     lspinorb=.TRUE.,
-    ecutwfc=50,
+    ecutwfc=55,
     ecutrho=400,
     occupations =smearing
     smearing =mv
-    degauss =2.D-3
+    degauss =1.D-4
     !input_dft='vdW-DF2-C09',
+    assume_isolated = '2D'
  / 
  
  &ELECTRONS
@@ -37,9 +38,9 @@
 
 
  ATOMIC_SPECIES 
-    Mo  95.95  Mo.rel-pbe-spn-rrkjus_psl.1.0.0.UPF
-    W  183.84  W.UPF
-    S  32.065  S.rel-pbe-n-rrkjus_psl.1.0.0.UPF
+    Mo  95.95  Mo.rel-pz-spn-kjpaw_psl.1.0.0.UPF
+    W  183.84  W.rel-pz-spn-kjpaw_psl.1.0.0.UPF
+    S  32.065  S.rel-pz-n-kjpaw_psl.0.1.UPF
  
 
  ATOMIC_POSITIONS {crystal} 
@@ -52,6 +53,8 @@ S 0.333333333 0.666666666 -0.166386543
  
 
  K_POINTS {automatic}
- 12 12 1 0 0 0
+12 12 1 0 0 0 
+ 
+ 16 16 1 0 0 0
  
 
